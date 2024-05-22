@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:optimaizationmvp/src/explorer/features/posts/views/post_list_screen.dart';
+import 'package:optimaizationmvp/src/explorer/features/users/views/user_list_screen.dart';
 
 import 'home_screen.dart';
 
@@ -34,7 +35,7 @@ class _DashboardState extends State<Dashboard> {
           });
         },
         children: [
-          const Home(),
+          const UserListScreen(),
           const PostListScreen(),
         ],
       ),

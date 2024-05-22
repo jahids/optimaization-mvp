@@ -10,8 +10,12 @@ class PostController extends GetxController {
   late final Query<List<Post>> postsQuery;
 
   PostController({required this.repository}) {
+    // get api
+    // query mean get api
+    // mutation means post api
     postsQuery = Query<List<Post>>(
-      key: 'posts',
+      key: 'posts', // key to identify the query
+      // queryFn: () async => repository.fetchPosts(),
       queryFn: () async {
         print('Fetching posts from API...');
         return repository.fetchPosts();

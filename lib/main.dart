@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cached_query_flutter/cached_query_flutter.dart';
 import 'package:optimaizationmvp/src/core/bindings/initial_binding.dart';
-import 'package:optimaizationmvp/src/explorer/features/posts/views/post_list_screen.dart';
+import 'package:optimaizationmvp/src/explorer/features/posts/views/dashboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Configure CachedQuery with persistent storage
+  // Initialize Cached Storage to persist the cache to disk
   CachedQuery.instance.configFlutter(
-    config: QueryConfigFlutter(
-      refetchDuration: Duration(seconds: 4),
-    ),
     storage: await CachedStorage.ensureInitialized(),
+    config: QueryConfigFlutter(
+      cacheDuration: const Duration(days: 7), // Cache duration for the data
+      // refetchDuration: Duration(seconds: 10), // Global refetch duration
+      refetchDuration: const Duration(days: 7),
+    ),
   );
 
   runApp(const MyApp());
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialBinding: InitialBinding(),
-      home: PostListScreen(),
+      home: const Dashboard(),
     );
   }
 }

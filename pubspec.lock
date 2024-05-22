@@ -26,7 +26,7 @@ packages:
     source: hosted
     version: "2.1.1"
   cached_query:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: cached_query
       sha256: ec4d8de818a574f256954162383669d4dc5106860a4fa8eb43e9c5c6193d8483

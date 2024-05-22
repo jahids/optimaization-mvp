@@ -39,6 +39,7 @@ dependencies:
   http: ^1.2.1
   cached_query_flutter: ^2.0.2
   cached_storage: ^2.0.2
+  cached_query: ^2.0.2
 
 dev_dependencies:
   flutter_test:
